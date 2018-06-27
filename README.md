@@ -91,76 +91,76 @@ var linear = d3.easePoly.exponent(1),
 <a name="easeQuad" href="#easeQuad">#</a> d3.<b>easeQuad</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/quad.js "Source")
 <br><a name="easeQuadInOut" href="#easeQuadInOut">#</a> d3.<b>easeQuadInOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/quad.js#L9 "Source")
 
-Symmetric quadratic easing; scales [quadIn](#easeQuadIn) for *t* in [0, 0.5] and [quadOut](#easeQuadOut) for *t* in [0.5, 1]. Also equivalent to [poly](#easePoly).[exponent](#poly_exponent)(2).
+`Symmetric quadratic(对称二次缓动)` ; *t* 处于[0, 0.5] 时使用 [quadIn](#easeQuadIn) 而 *t* 处于 [0.5, 1] 时使用 [quadOut](#easeQuadOut).  也等价于 [poly](#easePoly).[exponent](#poly_exponent)(2).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/quadInOut.png" alt="quadInOut" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#quadInOut)
 
 <a name="easeCubicIn" href="#easeCubicIn">#</a> d3.<b>easeCubicIn</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/cubic.js#L1 "Source")
 
-Cubic easing; equivalent to [polyIn](#easePolyIn).[exponent](#poly_exponent)(3).
+`Cubic(三次缓动)`；等价于 [polyIn](#easePolyIn).[exponent](#poly_exponent)(3)
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/cubicIn.png" alt="cubicIn" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#cubicIn)
 
 <a name="easeCubicOut" href="#easeCubicOut">#</a> d3.<b>easeCubicOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/cubic.js#L5 "Source")
 
-Reverse cubic easing; equivalent to 1 - [cubicIn](#easeCubicIn)(1 - *t*). Also equivalent to [polyOut](#easePolyOut).[exponent](#poly_exponent)(3).
+反转 `cubic(三次缓动)`; 等价于 1 - [cubicIn](#easeCubicIn)(1 - *t*). 也等价于 [polyOut](#easePolyOut).[exponent](#poly_exponent)(3).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/cubicOut.png" alt="cubicOut" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#cubicOut)
 
 <a name="easeCubic" href="#easeCubic">#</a> d3.<b>easeCubic</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/cubic.js "Source")
 <br><a name="easeCubicInOut" href="#easeCubicInOut">#</a> d3.<b>easeCubicInOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/cubic.js#L9 "Source")
 
-Symmetric cubic easing; scales [cubicIn](#easeCubicIn) for *t* in [0, 0.5] and [cubicOut](#easeCubicOut) for *t* in [0.5, 1]. Also equivalent to [poly](#easePoly).[exponent](#poly_exponent)(3).
+`Symmetric cubic(对称三次缓动)`; *t* 处于 [0, 0.5] 时使用 [cubicIn](#easeCubicIn) 而 *t* 处于 [0.5, 1] 时使用 [cubicOut](#easeCubicOut)。也等价于 [poly](#easePoly).[exponent](#poly_exponent)(3).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/cubicInOut.png" alt="cubicInOut" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#cubicInOut)
 
 <a name="easeSinIn" href="#easeSinIn">#</a> d3.<b>easeSinIn</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/sin.js#L4 "Source")
 
-Sinusoidal easing; returns sin(*t*).
+`Sinusoidal(正弦缓动)`; 返回 `sin(*t*)`.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/sinIn.png" alt="sinIn" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#sinIn)
 
 <a name="easeSinOut" href="#easeSinOut">#</a> d3.<b>easeSinOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/sin.js#L8 "Source")
 
-Reverse sinusoidal easing; equivalent to 1 - [sinIn](#easeSinIn)(1 - *t*).
+反转 `sinusoidal(正弦缓动)`; 等价于 1 - [sinIn](#easeSinIn)(1 - *t*).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/sinOut.png" alt="sinOut" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#sinOut)
 
 <a name="easeSin" href="#easeSin">#</a> d3.<b>easeSin</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/sin.js "Source")
 <br><a name="easeSinInOut" href="#easeSinInOut">#</a> d3.<b>easeSinInOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/sin.js#L12 "Source")
 
-Symmetric sinusoidal easing; scales [sinIn](#easeSinIn) for *t* in [0, 0.5] and [sinOut](#easeSinOut) for *t* in [0.5, 1].
+对称 `sinusoidal(缓动)`; *t* 处于 [0, 0.5] 时使用 [sinIn](#easeSinIn) 而 *t* 处于 [0.5, 1] 时使用 [sinOut](#easeSinOut).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/sinInOut.png" alt="sinInOut" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#sinInOut)
 
 <a name="easeExpIn" href="#easeExpIn">#</a> d3.<b>easeExpIn</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/exp.js#L1 "Source")
 
-Exponential easing; raises 2 to the exponent 10 \* (*t* - 1).
+`Exponential(指数)` 缓动; 映射为 2 的 10 \* (*t* - 1) 次方.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/expIn.png" alt="expIn" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#expIn)
 
 <a name="easeExpOut" href="#easeExpOut">#</a> d3.<b>easeExpOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/exp.js#L5 "Source")
 
-Reverse exponential easing; equivalent to 1 - [expIn](#easeExpIn)(1 - *t*).
+反转 `exponential(指数缓动)`; 等价于 1 - [expIn](#easeExpIn)(1 - *t*).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/expOut.png" alt="expOut" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#expOut)
 
 <a name="easeExp" href="#easeExp">#</a> d3.<b>easeExp</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/exp.js "Source")
 <br><a name="easeExpInOut" href="#easeExpInOut">#</a> d3.<b>easeExpInOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/exp.js#L9 "Source")
 
-Symmetric exponential easing; scales [expIn](#easeExpIn) for *t* in [0, 0.5] and [expOut](#easeExpOut) for *t* in [0.5, 1].
+对称 `exponential(指数缓动)`; *t* 处于 [0, 0.5] 时使用 [expIn](#easeExpIn) 而 *t* 处于 [0.5, 1] 时使用 [expOut](#easeExpOut).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/expInOut.png" alt="expInOut" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#expInOut)
 
 <a name="easeCircleIn" href="#easeCircleIn">#</a> d3.<b>easeCircleIn</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/circle.js#L1 "Source")
 
-Circular easing.
+`Circular(环形缓动)`.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/circleIn.png" alt="circleIn" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#circleIn)
 
 <a name="easeCircleOut" href="#easeCircleOut">#</a> d3.<b>easeCircleOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/circle.js#L5 "Source")
 
-Reverse circular easing; equivalent to 1 - [circleIn](#easeCircleIn)(1 - *t*).
+反转 `Circular(环形缓动)`; 等价于 1 - [circleIn](#easeCircleIn)(1 - *t*).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/circleOut.png" alt="circleOut" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#circleOut)
 
