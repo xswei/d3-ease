@@ -1,14 +1,14 @@
 # d3-ease
 
-*Easing* is a method of distorting time to control apparent motion in animation. It is most commonly used for [slow-in, slow-out](https://en.wikipedia.org/wiki/12_basic_principles_of_animation#Slow_In_and_Slow_Out). By easing time, [animated transitions](https://github.com/d3/d3-transition) are smoother and exhibit more plausible motion.
+*Easing* 是一种通过扭曲时间来控制动画中的表现形式的方法。通常被用来 [slow-in, slow-out](https://en.wikipedia.org/wiki/12_basic_principles_of_animation#Slow_In_and_Slow_Out)。通过对时间的缓动，[animated transitions](https://github.com/d3/d3-transition) 会更平滑且运动过程也更合理。
 
-The easing types in this module implement the [ease method](#ease_ease), which takes a normalized time *t* and returns the corresponding “eased” time *tʹ*. Both the normalized time and the eased time are typically in the range [0,1], where 0 represents the start of the animation and 1 represents the end; some easing types, such as [elastic](#easeElastic), may return eased times slightly outside this range. A good easing type should return 0 if *t* = 0 and 1 if *t* = 1. See the [easing explorer](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4) for a visual demonstration.
+此模块中的缓动类型实现了 [ease method](#ease_ease)，传递一个归一化的时间 *t* 会返回一个经过缓动处理之后的时间 *tʹ*。两者通常都处于 [0,1] 之间，其中 `0` 表示动画的开始而 `1` 表示的是动画的结束；有一些缓动类型比如 [elastic](#easeElastic) 返回的值可能会超出这个范围。一个好的缓动类型应该在 *t* 等于 `0` 时候返回 `0` 并且 *t* 等于 `1` 时返回 `1`。参考 [easing explorer](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4) 来直观的感受 *t* 和 *tʹ* 之间的映射关系。
 
-These easing types are largely based on work by [Robert Penner](http://robertpenner.com/easing/).
+这些缓动类型大多数都是基于 [Robert Penner](http://robertpenner.com/easing/) 的作品.
 
 ## Installing
 
-If you use NPM, `npm install d3-ease`. Otherwise, download the [latest release](https://github.com/d3/d3-ease/releases/latest). You can also load directly from [d3js.org](https://d3js.org), either as a [standalone library](https://d3js.org/d3-ease.v1.min.js) or as part of [D3 4.0](https://github.com/d3/d3). AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
+`NPM` 安装: `npm install d3-ease`. 此外还可以下载 [latest release](https://github.com/d3/d3-ease/releases/latest). 可以直接从 [d3js.org](https://d3js.org) 以 [standalone library(单独的标准库)](https://d3js.org/d3-ease.v1.min.js) 或作为 [D3 4.0](https://github.com/d3/d3) 的一部分直接载入. 支持 `AMD`, `CommonJS`, 以及基础的标签引入形式。如果使用标签引入则会暴露 `d3` 全局变量:
 
 ```html
 <script src="https://d3js.org/d3-ease.v1.min.js"></script>
@@ -19,19 +19,19 @@ var ease = d3.easeCubic;
 </script>
 ```
 
-[Try d3-ease in your browser.](https://tonicdev.com/npm/d3-ease)
+[在浏览器中测试 d3-ease ](https://tonicdev.com/npm/d3-ease)
 
 ## API Reference
 
 <a name="_ease" href="#_ease">#</a> <i>ease</i>(<i>t</i>)
 
-Given the specified normalized time *t*, typically in the range [0,1], returns the “eased” time *tʹ*, also typically in [0,1]. 0 represents the start of the animation and 1 represents the end. A good implementation returns 0 if *t* = 0 and 1 if *t* = 1. See the [easing explorer](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4) for a visual demonstration. For example, to apply [cubic](#easeCubic) easing:
+给定归一化的时间 *t*，通常在 [0, 1] 之间，然后返回对应缓动的时间 *tʹ*, 返回值通常也在 [0, 1] 之间。`0` 表示的是动画开始而 `1` 表示的是动画结束。一个好的缓动设计会在 *t* = 0 时返回 `0` 而 *t* = 1 时返回 `1`。参考 [easing explorer](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4)。例如应用 [cubic](#easeCubic) 缓动:
 
 ```js
 var te = d3.easeCubic(t);
 ```
 
-Similarly, to apply custom [elastic](#easeElastic) easing:
+同理，应用自定义的 [elastic](#easeElastic) 缓动:
 
 ```js
 // Before the animation starts, create your easing function.
@@ -43,32 +43,32 @@ var te = customElastic(t);
 
 <a name="easeLinear" href="#easeLinear">#</a> d3.<b>easeLinear</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/linear.js "Source")
 
-Linear easing; the identity function; *linear*(*t*) returns *t*.
+`Linear(线性)` 缓动。恒等函数，*linear*(*t*) 返回 *t*。
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/linear.png" alt="linear" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#linear)
 
 <a name="easePolyIn" href="#easePolyIn">#</a> d3.<b>easePolyIn</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/poly.js#L3 "Source")
 
-Polynomial easing; raises *t* to the specified [exponent](#poly_exponent). If the exponent is not specified, it defaults to 3, equivalent to [cubicIn](#easeCubicIn).
+`Polynomial(多项式)` 缓动; 将 *t* 进行 [exponent](#poly_exponent) 运算. 如果指数没有指定则默认为 `3`, 等价于 [cubicIn](#easeCubicIn).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/polyIn.png" alt="polyIn" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#polyIn)
 
 <a name="easePolyOut" href="#easePolyOut">#</a> d3.<b>easePolyOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/poly.js#L15 "Source")
 
-Reverse polynomial easing; equivalent to 1 - [polyIn](#easePolyIn)(1 - *t*). If the [exponent](#poly_exponent) is not specified, it defaults to 3, equivalent to [cubicOut](#easeCubicOut).
+反转 `polynomial` 缓动; 等价于 1 - [polyIn](#easePolyIn)(1 - *t*). 如果 [exponent](#poly_exponent) 没有被指定则默认为 `3`, 等价于 [cubicOut](#easeCubicOut).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/polyOut.png" alt="polyOut" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#polyOut)
 
 <a name="easePoly" href="#easePoly">#</a> d3.<b>easePoly</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/poly.js "Source")
 <br><a name="easePolyInOut" href="#easePolyInOut">#</a> d3.<b>easePolyInOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/poly.js#L27 "Source")
 
-Symmetric polynomial easing; scales [polyIn](#easePolyIn) for *t* in [0, 0.5] and [polyOut](#easePolyOut) for *t* in [0.5, 1]. If the [exponent](#poly_exponent) is not specified, it defaults to 3, equivalent to [cubic](#easeCubic).
+`Symmetric polynomial(对称多项式)` 缓动; 在 *t* 处于 [0, 0.5] 时使用 [polyIn](#easePolyIn) 而 *t* 处于 [0.5, 1] 时 使用 [polyOut](#easePolyOut). 如果没有指定 [exponent](#poly_exponent) 则默认为 `3`. 等价于 [cubic](#easeCubic).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/polyInOut.png" alt="polyInOut" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#polyInOut)
 
 <a name="poly_exponent" href="#poly_exponent">#</a> <i>poly</i>.<b>exponent</b>(<i>e</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/poly.js#L1 "Source")
 
-Returns a new polynomial easing with the specified exponent *e*. For example, to create equivalents of [linear](#easeLinear), [quad](#easeQuad), and [cubic](#easeCubic):
+根据指定的指数 *e* 返回一个新的多项式缓动函数. 例如分别创建 [linear](#easeLinear), [quad](#easeQuad), 和 [cubic](#easeCubic) 缓动函数:
 
 ```js
 var linear = d3.easePoly.exponent(1),
@@ -78,13 +78,13 @@ var linear = d3.easePoly.exponent(1),
 
 <a name="easeQuadIn" href="#easeQuadIn">#</a> d3.<b>easeQuadIn</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/quad.js#L1 "Source")
 
-Quadratic easing; equivalent to [polyIn](#easePolyIn).[exponent](#poly_exponent)(2).
+`Quadratic(二次缓动)`; 等价于 [polyIn](#easePolyIn).[exponent](#poly_exponent)(2).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/quadIn.png" alt="quadIn" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#quadIn)
 
 <a name="easeQuadOut" href="#easeQuadOut">#</a> d3.<b>easeQuadOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/quad.js#L5 "Source")
 
-Reverse quadratic easing; equivalent to 1 - [quadIn](#easeQuadIn)(1 - *t*). Also equivalent to [polyOut](#easePolyOut).[exponent](#poly_exponent)(2).
+反转 `quadratic` ; 等价于 1 - [quadIn](#easeQuadIn)(1 - *t*). 也等价于 [polyOut](#easePolyOut).[exponent](#poly_exponent)(2).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/quadOut.png" alt="quadOut" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#quadOut)
 
