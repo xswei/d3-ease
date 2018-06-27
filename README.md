@@ -167,36 +167,36 @@ var linear = d3.easePoly.exponent(1),
 <a name="easeCircle" href="#easeCircle">#</a> d3.<b>easeCircle</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/circle.js "Source")
 <br><a name="easeCircleInOut" href="#easeCircleInOut">#</a> d3.<b>easeCircleInOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/circle.js#L9 "Source")
 
-Symmetric circular easing; scales [circleIn](#easeCircleIn) for *t* in [0, 0.5] and [circleOut](#easeCircleOut) for *t* in [0.5, 1].
+反转 `circular(缓动)`; *t* 处于 [0, 0.5] 时使用 [circleIn](#easeCircleIn) 而 *t* 处于 [0.5, 1] 时使用 [circleOut](#easeCircleOut).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/circleInOut.png" alt="circleInOut" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#circleInOut)
 
 <a name="easeElasticIn" href="#easeElasticIn">#</a> d3.<b>easeElasticIn</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/elastic.js#L5 "Source")
 
-Elastic easing, like a rubber band. The [amplitude](#elastic_amplitude) and [period](#elastic_period) of the oscillation are configurable; if not specified, they default to 1 and 0.3, respectively.
+`Elastic(震荡缓动)`, 像一个震荡的橡皮筋. 震荡的 [amplitude(振幅)](#elastic_amplitude) 和 [period(周期)](#elastic_period) 是可以配置的; 如果没有指定则分别默认为 `1` 和 `0.3`.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/elasticIn.png" alt="elasticIn" width="100%" height="360">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#elasticIn)
 
 <a name="easeElastic" href="#easeElastic">#</a> d3.<b>easeElastic</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/elastic.js "Source")
 <br><a name="easeElasticOut" href="#easeElasticOut">#</a> d3.<b>easeElasticOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/elastic.js#L18 "Source")
 
-Reverse elastic easing; equivalent to 1 - [elasticIn](#easeElasticIn)(1 - *t*).
+反转 `elastic(震荡缓动)` 等价于 1 - [elasticIn](#easeElasticIn)(1 - *t*).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/elasticOut.png" alt="elasticOut" width="100%" height="360">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#elasticOut)
 
 <a name="easeElasticInOut" href="#easeElasticInOut">#</a> d3.<b>easeElasticInOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/elastic.js#L31 "Source")
 
-Symmetric elastic easing; scales [elasticIn](#easeElasticIn) for *t* in [0, 0.5] and [elasticOut](#easeElasticOut) for *t* in [0.5, 1].
+对称 `elastic(震荡缓动)`; *t* 处于 [0, 0.5] 时使用 [elasticIn](#easeElasticIn) 而 *t* 处于 [0.5, 1] 时使用 [elasticOut](#easeElasticOut).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/elasticInOut.png" alt="elasticInOut" width="100%" height="360">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#elasticInOut)
 
 <a name="elastic_amplitude" href="#elastic_amplitude">#</a> <i>elastic</i>.<b>amplitude</b>(<i>a</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/elastic.js#L40 "Source")
 
-Returns a new elastic easing with the specified amplitude *a*.
+根据指定的振幅 *a* 返回一个新的震荡缓动.
 
 <a name="elastic_period" href="#elastic_period">#</a> <i>elastic</i>.<b>period</b>(<i>p</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/elastic.js#L41 "Source")
 
-Returns a new elastic easing with the specified period *p*.
+根据指定的周期 *p* 返回一个新的震荡缓动.
 
 <a name="easeBackIn" href="#easeBackIn">#</a> d3.<b>easeBackIn</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/back.js#L3 "Source")
 
