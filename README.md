@@ -200,42 +200,42 @@ var linear = d3.easePoly.exponent(1),
 
 <a name="easeBackIn" href="#easeBackIn">#</a> d3.<b>easeBackIn</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/back.js#L3 "Source")
 
-[Anticipatory](https://en.wikipedia.org/wiki/12_basic_principles_of_animation#Anticipation) easing, like a dancer bending his knees before jumping off the floor. The degree of [overshoot](#back_overshoot) is configurable; it not specified, it defaults to 1.70158.
+[Anticipatory](https://en.wikipedia.org/wiki/12_basic_principles_of_animation#Anticipation) 缓动, 就像是一个舞者在跳跃之前先将自己的膝盖弯曲。 超调量 [overshoot](#back_overshoot) 是可配置的。如果没有指定的话默认为 `1.70158`。
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/backIn.png" alt="backIn" width="100%" height="300">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#backIn)
 
 <a name="easeBackOut" href="#easeBackOut">#</a> d3.<b>easeBackOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/back.js#L15 "Source")
 
-Reverse anticipatory easing; equivalent to 1 - [backIn](#easeBackIn)(1 - *t*).
+反转 `anticipatory` 缓动; 等价于 1 - [backIn](#easeBackIn)(1 - *t*).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/backOut.png" alt="backOut" width="100%" height="300">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#backOut)
 
 <a name="easeBack" href="#easeBack">#</a> d3.<b>easeBack</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/back.js "Source")
 <br><a name="easeBackInOut" href="#easeBackInOut">#</a> d3.<b>easeBackInOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/back.js#L27 "Source")
 
-Symmetric anticipatory easing; scales [backIn](#easeBackIn) for *t* in [0, 0.5] and [backOut](#easeBackOut) for *t* in [0.5, 1].
+对称 `anticipatory` 缓动; 在 *t* 处于 [0, 0.5] 时使用 [backIn](#easeBackIn) 而 *t* 处于 [0.5, 1] 时使用 [backOut](#easeBackOut).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/backInOut.png" alt="backInOut" width="100%" height="300">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#backInOut)
 
 <a name="back_overshoot" href="#back_overshoot">#</a> <i>back</i>.<b>overshoot</b>(<i>s</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/back.js#L1 "Source")
 
-Returns a new back easing with the specified overshoot *s*.
+根据指定的超调量 *s* 返回一个新的 `anticipatory` 缓动.
 
 <a name="easeBounceIn" href="#easeBounceIn">#</a> d3.<b>easeBounceIn</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/bounce.js#L12 "Source")
 
-Bounce easing, like a rubber ball.
+`Bounce(弹跳缓动)`, 就像是一个橡皮球.
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/bounceIn.png" alt="bounceIn" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#bounceIn)
 
 <a name="easeBounce" href="#easeBounce">#</a> d3.<b>easeBounce</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/bounce.js "Source")
 <br><a name="easeBounceOut" href="#easeBounceOut">#</a> d3.<b>easeBounceOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/bounce.js#L16 "Source")
 
-Reverse bounce easing; equivalent to 1 - [bounceIn](#easeBounceIn)(1 - *t*).
+反转 `Bounce(弹跳缓动)` 等价于 1 - [bounceIn](#easeBounceIn)(1 - *t*).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/bounceOut.png" alt="bounceOut" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#bounceOut)
 
 <a name="easeBounceInOut" href="#easeBounceInOut">#</a> d3.<b>easeBounceInOut</b>(<i>t</i>) [<>](https://github.com/d3/d3-ease/blob/master/src/bounce.js#L20 "Source")
 
-Symmetric bounce easing; scales [bounceIn](#easeBounceIn) for *t* in [0, 0.5] and [bounceOut](#easeBounceOut) for *t* in [0.5, 1].
+对称 `Bounce(弹跳缓动)`; 在 *t* 处于 [0, 0.5] 时使用 [bounceIn](#easeBounceIn) 而 *t* in [0.5, 1] 时使用 [bounceOut](#easeBounceOut).
 
 [<img src="https://raw.githubusercontent.com/d3/d3-ease/master/img/bounceInOut.png" alt="bounceInOut" width="100%" height="240">](http://bl.ocks.org/mbostock/248bac3b8e354a9103c4/#bounceInOut)
